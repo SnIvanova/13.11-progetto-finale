@@ -28,9 +28,9 @@ console.log(random);
   Crea una variabile chiamata "me" e assegnaci un oggetto contenente le seguenti proprietà: name = il tuo nome, surname = il tuo cognome, age = la tua età.
 */
 var me = {
-  name: "Il tuo nome",
-  surname: "Il tuo cognome",
-  age: "La tua età"
+  name: "Snizhana",
+  surname: "Ivanova",
+  age: "31"
 };
 console.log(me);
 
