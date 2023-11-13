@@ -66,12 +66,21 @@
         const rollResult = rollTheDices(2);
         exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 8: Dice roll result - Sum: ${rollResult.sum}, Values: ${rollResult.values.join(', ')}</p>`;
         exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 9: ${howManyDays('2023-01-01')}</p>`;
+
         const birthdayResult = isTodayMyBirthday();
         const birthdayMessage = birthdayResult
             ? '<p class="happy">ESERCIZIO 10: 🎉 Today is my birthday! 🎂</p>'
             : '<p class="sad">ESERCIZIO 10: 😞 Today is not my birthday. 😢</p>';
         
         exerciseResultsDiv.innerHTML += birthdayMessage;
+
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 11: Object after deletingproperty: 
+            Name: ${myObj.name}, Height: ${myObj.height}</p>`;
+        
+
+        const numMovies = countMovies(movies);
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 13: Number of movies: ${numMovies}</p>`;
+
     </script>
 
 
