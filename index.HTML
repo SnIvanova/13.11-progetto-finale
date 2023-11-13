@@ -44,7 +44,14 @@
     const exerciseResultsDiv = document.querySelector('#exerciseResults');
     exerciseResultsDiv.innerHTML += `<p>ESERCIZIO A: ${sum}</p>`;
     exerciseResultsDiv.innerHTML += `<p>ESERCIZIO B: ${random}</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO C: ${JSON.stringify(me)}</p>`;
+    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO C:</p>`;
+    for (let prop in me) {
+    exerciseResultsDiv.innerHTML += `<p>${prop.charAt(0).toUpperCase() + prop.slice(1)}: ${me[prop]}</p>`;
+    }
+    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO D: Age deleted - Name - ${me.name}, Surname - ${me.surname}</p>`;
+    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO E: Skills added - ${me.skills.join(', ')}</p>`;
+    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO F: New element added to Skills - ${me.skills.join(', ')}</p>`;
+    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO G: Last element removed from Skills - ${me.skills.join(', ')}</p>`;
 </script>
 
 
