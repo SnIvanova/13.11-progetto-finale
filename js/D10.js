@@ -67,34 +67,83 @@ console.log(me.skills);
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
 
+function dice () {
+  return Math.floor(Math.random()*6)+1;
+}
+console.log(dice());
+
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
+function whoIsBigger(num1, num2){
+  if (num1 < num2){
+    return num2;
+  } else if (num1 > num2){
+    return num1;
+  } else {
+    return 'equal';
+  }
+}
+console.log(whoIsBigger());
+
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
 
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
+function splitMe(str1){
+  return str1.split(' ');
+}
+console.log( splitMe("split all words"));
+
 
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
 
+function deleteOne(str, bool){
+  if (bool){
+    return str.slice(1);
+  } else {
+    return str.slice(0, -1);
+  }
+}
+
+console.log( deleteOne("delete all words"));
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
+function onlyLetters(str) {
+  return str.replace(/[0-9]/g, '');
+}
+console.log( onlyLetters("I have 4 dogs"));
+    
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
+function isThisAnEmail(str) {
+  const check = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+  return check.test(str);
+}
+console.log( isThisAnEmail("is This An Email"));
+
 
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+
+function whatDayIsIt() {
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const date = new Date();
+  return days[date.getDay()];
+}
+
+console.log(whatDayIsIt());
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -109,10 +158,27 @@ console.log(me.skills);
   }
 */
 
+function rollTheDices(num) {
+  let sum = 0;
+  let values = [];
+
+  for(let i = 0; i < num; i++) {
+    let roll = dice();
+    sum += roll;
+    values.push(roll);
+  }
+
+  return {
+    sum: sum,
+    values: values
+  };
+}
+
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
 
+function howManyDays(num) {}
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
