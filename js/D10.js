@@ -53,7 +53,7 @@ console.log(me.skills);
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
 */
 
-me.skills.push("nuovo elemento")
+me.skills.push("Python")
 console.log(me.skills);
 
 /* ESERCIZIO G
@@ -84,7 +84,7 @@ function whoIsBigger(num1, num2){
     return 'equal';
   }
 }
-console.log(whoIsBigger());
+console.log(whoIsBigger(3,10));
 
 
 /* ESERCIZIO 3
