@@ -572,7 +572,7 @@ function isItPrime(num) {
 
   return true;
 }
-
+console.log(isItPrime (4));
 
 
 
