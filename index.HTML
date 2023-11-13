@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta autor="SnIvanova">
     <link rel="stylesheet" href="css/style.css">
-    <title> risposte</title>
+    <title> Risposte</title>
 
 
 </head>
 <body>
 
-    <h1></h1>
+    <h1>Risposte</h1>
 
     <div class="container">
         <table>
@@ -42,25 +42,36 @@
 <script src="js/D10.js"></script>
 <script>
     const exerciseResultsDiv = document.querySelector('#exerciseResults');
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO A: ${sum}</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO B: ${random}</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO C:</p>`; for (let prop in me) {
-    exerciseResultsDiv.innerHTML += `<p>${prop.charAt(0).toUpperCase() + prop.slice(1)}: ${me[prop]}</p>`;
-    }
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO D: Age deleted - Name - ${me.name}, Surname - ${me.surname}</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO E: Skills added - ${me.skills.join(', ')}</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO F: New element added to Skills - ${me.skills.join(', ')}, Python</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO G: Last element removed from Skills - ${me.skills.join(', ')}</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 1: Dice roll result - ${dice()}</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 2: Bigger number - ${whoIsBigger(3, 10)}</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 3: ${splitMe("split all words").join(', ')}</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 4: ${deleteOne("delete all words")}</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 5: ${onlyLetters("I have 4 dogs")}</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 6: ${isThisAnEmail("is This An Email")}</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 7: ${whatDayIsIt()}</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 8:</p>`;
-    exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 9: ${howManyDays('2023-01-01')}</p>`;
-</script>
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO A: ${sum}</p>`;
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO B: ${random}</p>`;
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO C:</p>`;
+        for (let prop in me) {
+            exerciseResultsDiv.innerHTML += `<p>${prop.charAt(0).toUpperCase() + prop.slice(1)}: ${me[prop]}</p>`;
+        }
+        delete me.age;
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO D: Age deleted - Name - ${me.name}, Surname - ${me.surname}</p>`;
+        me.skills = ['HTML', 'CSS', 'JavaScript'];
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO E: Skills added - ${me.skills.join(', ')}</p>`;
+        me.skills.push("Python");
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO F: New element added to Skills - ${me.skills.join(', ')}, Python</p>`;
+        me.skills.pop();
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO G: Last element removed from Skills - ${me.skills.join(', ')}</p>`;
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 1: Dice roll result - ${dice()}</p>`;
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 2: Bigger number - ${whoIsBigger(3, 10)}</p>`;
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 3: ${splitMe("split all words").join(', ')}</p>`;
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 4: ${deleteOne("delete all words")}</p>`;
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 5: ${onlyLetters("I have 4 dogs")}</p>`;
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 6: ${isThisAnEmail("is This An Email")}</p>`;
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 7: ${whatDayIsIt()}</p>`;
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 8: Dice roll result </p>`;
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 9: ${howManyDays('2023-01-01')}</p>`;
+        const birthdayResult = isTodayMyBirthday();
+        const birthdayMessage = birthdayResult
+            ? '<p class="happy">ESERCIZIO 10: 🎉 Today is my birthday! 🎂</p>'
+            : '<p class="sad">ESERCIZIO 10: 😞 Today is not my birthday. 😢</p>';
+        
+        exerciseResultsDiv.innerHTML += birthdayMessage;
+    </script>
 
 
 </body>
