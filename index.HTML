@@ -63,7 +63,8 @@
         exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 5: ${onlyLetters("I have 4 dogs")}</p>`;
         exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 6: ${isThisAnEmail("is This An Email")}</p>`;
         exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 7: ${whatDayIsIt()}</p>`;
-        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 8: Dice roll result </p>`;
+        const rollResult = rollTheDices(2);
+        exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 8: Dice roll result - Sum: ${rollResult.sum}, Values: ${rollResult.values.join(', ')}</p>`;
         exerciseResultsDiv.innerHTML += `<p>ESERCIZIO 9: ${howManyDays('2023-01-01')}</p>`;
         const birthdayResult = isTodayMyBirthday();
         const birthdayMessage = birthdayResult
