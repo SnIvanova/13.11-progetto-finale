@@ -527,6 +527,7 @@ function halfTree(alt) {
   }
 }
 halfTree(8);
+
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -539,18 +540,20 @@ halfTree(8);
 
 */
 function tree(height) {
-  for(let i = 0; i < height; i++) {
-    let row = '';
-    for(let j = 0; j < height - i - 1; j++) {
-      row += ' ';}
-    for(let j = 0; j < 2 * i + 1; j++) {
-      row += '*';
+  for (let i = 0; i < height; i++) {
+    let star = '';
+    for (let j = 0; j < height + i; j++) {
+      if (j < height - i - 1) {
+        star += ' ';
+      } else {
+        star += '*';
+      }
     }
-
-    console.log(row);
+    console.log(star);
   }
 }
-tree (4);
+
+tree(4);
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
@@ -570,6 +573,6 @@ function isItPrime(num) {
   return true;
 }
 
-isItPrime(5);
+
 
 
