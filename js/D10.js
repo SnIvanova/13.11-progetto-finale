@@ -541,13 +541,8 @@ halfTree(8);
 function tree(height) {
   for(let i = 0; i < height; i++) {
     let row = '';
-
-    // Aggiungi gli spazi
     for(let j = 0; j < height - i - 1; j++) {
-      row += ' ';
-    }
-
-    // Aggiungi gli asterischi
+      row += ' ';}
     for(let j = 0; j < 2 * i + 1; j++) {
       row += '*';
     }
@@ -562,5 +557,6 @@ tree (4);
 */
 
 function isItPrime (num) {
+  if
 
 
