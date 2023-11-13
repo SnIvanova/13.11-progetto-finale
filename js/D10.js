@@ -499,12 +499,10 @@ clearMyList()
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
-function addcss () {
-  let list = document.getElementsByTagName ("tr");
-  for (let i = 0 ; i < list.length; i++) {
-    list[i].classList.add ("test");
-}}
-addcss ();
+  const tr = document.querySelectorAll("tr");
+  tr.forEach((element) => {
+    element.classList.add("css");
+  });
 
 // [EXTRA] JS Avanzato
 
@@ -519,10 +517,16 @@ addcss ();
   ***
 
 */
-function halfTree(){
-
+function halfTree(alt) {
+  for(let i = 0; i < alt; i++) {
+    let star = '';
+    for(let j = 0; j <= i; j++) {
+      star += '*';
+    }
+    console.log(star);
+  }
 }
-
+halfTree(8);
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -534,8 +538,29 @@ function halfTree(){
   *****
 
 */
+function tree(height) {
+  for(let i = 0; i < height; i++) {
+    let row = '';
+
+    // Aggiungi gli spazi
+    for(let j = 0; j < height - i - 1; j++) {
+      row += ' ';
+    }
+
+    // Aggiungi gli asterischi
+    for(let j = 0; j < 2 * i + 1; j++) {
+      row += '*';
+    }
+
+    console.log(row);
+  }
+}
+tree (4);
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+
+function isItPrime (num) {
+
 
