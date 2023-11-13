@@ -424,7 +424,15 @@ console.log(searchAndDivide('1', movies));
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
 
-function removeIndex
+function removeIndex(index) {
+  if (index > -1 && index < movies.length) {
+    movies.splice(index, 1);
+  }
+  return movies;
+}
+
+console.log(removeIndex(1)); 
+
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -432,29 +440,71 @@ function removeIndex
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
 
+function selectContainer() {
+  return document.getElementById('container');
+} 
+console.log(selectContainer());
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 
+function selecttag() {
+  return document.getElementsByTagName("td")
+
+}
+console.log(selecttag());
+
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
-
+function printcontent () {
+  let content = document.getElementsByTagName("td");
+  for(let i = 0; i < content.length; i++) {
+    console.log(content[i].innerText);
+  }
+}
+console.log(printcontent());
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
+function addred () {	
+  let link = document.querySelectorAll("a");
+  for(let i = 0; i < link.length; i++) {
+    link[i].style.backgroundColor = "red";
+  }
+}
+addred()
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+function addToMyList(itemText) {
+  let myList = document.getElementById("myList");
+  let newItem = document.createElement("li");
+  newItem.textContent = itemText;
+  myList.appendChild(newItem);
+}
+
+addToMyList("New Item");
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
+function clearMyList() {
+  let myList = document.getElementById("myList");
+  myList.innerHTML = "";
+}
+clearMyList()
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+function addcss () {
+  let list = document.getElementsByTagName ("tr");
+  for (let i = 0 ; i < list.length; i++) {
+    list[i].classList.add ("test");
+}}
+addcss ();
 
 // [EXTRA] JS Avanzato
 
@@ -469,6 +519,9 @@ function removeIndex
   ***
 
 */
+function halfTree(){
+
+}
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
